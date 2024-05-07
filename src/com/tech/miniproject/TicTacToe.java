@@ -35,15 +35,13 @@ public class TicTacToe {
         }
 
         for (int a = 0; a < 9; a++) {
-            if (Arrays.asList(playBoard).contains(
-                    String.valueOf(a + 1))) {
+            if (Arrays.asList(playBoard).contains(String.valueOf(a + 1))) {
                 break;
             } else if (a == 8) {
                 return "draw";
             }
         }
-        System.out.println(
-                turns + "'s turn; enter a slot number to place " + turns + " in:");
+        System.out.println(turns + "'s turn; enter a slot number to place " + turns + " in:");
         return null;
     }
 
@@ -85,8 +83,7 @@ public class TicTacToe {
                 System.out.println("Invalid Input! Try again");
                 continue;
             }
-            if (playBoard[input - 1].equals(
-                    String.valueOf(input))) {
+            if (playBoard[input - 1].equals(String.valueOf(input))) {
                 playBoard[input - 1] = turns;
 
                 if (turns.equals("X")) {
@@ -99,8 +96,7 @@ public class TicTacToe {
 
                 winner = game.play();
             } else {
-                System.out.println(
-                        "Slot already taken; re-enter :");
+                System.out.println("Slot already taken; re-enter :");
             }
         }
         if (winner.equalsIgnoreCase("draw")) {
