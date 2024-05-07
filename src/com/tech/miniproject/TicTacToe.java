@@ -4,8 +4,8 @@ import java.util.*;
 
 public class TicTacToe {
 
-    static String[] board;
-    static String turn;
+    static String[] playBoard;
+    static String turns;
 
     static Scanner getScanner() {
         return new Scanner(System.in);
@@ -16,17 +16,16 @@ public class TicTacToe {
         for (int a = 0; a <= 8; a++) {
 
             line = switch (a) {
-                case 0 -> board[0] + board[1] + board[2];
-                case 1 -> board[3] + board[4] + board[5];
-                case 2 -> board[6] + board[7] + board[8];
-                case 3 -> board[0] + board[3] + board[6];
-                case 4 -> board[1] + board[4] + board[7];
-                case 5 -> board[2] + board[5] + board[8];
-                case 6 -> board[0] + board[4] + board[8];
-                case 7 -> board[2] + board[4] + board[6];
+                case 0 -> playBoard[0] + playBoard[1] + playBoard[2];
+                case 1 -> playBoard[3] + playBoard[4] + playBoard[5];
+                case 2 -> playBoard[6] + playBoard[7] + playBoard[8];
+                case 3 -> playBoard[0] + playBoard[3] + playBoard[6];
+                case 4 -> playBoard[1] + playBoard[4] + playBoard[7];
+                case 5 -> playBoard[2] + playBoard[5] + playBoard[8];
+                case 6 -> playBoard[0] + playBoard[4] + playBoard[8];
+                case 7 -> playBoard[2] + playBoard[4] + playBoard[6];
                 default -> line;
             };
-
 
             if (line.equals("XXX")) {
                 return "X";
@@ -36,7 +35,7 @@ public class TicTacToe {
         }
 
         for (int a = 0; a < 9; a++) {
-            if (Arrays.asList(board).contains(
+            if (Arrays.asList(playBoard).contains(
                     String.valueOf(a + 1))) {
                 break;
             } else if (a == 8) {
@@ -44,29 +43,28 @@ public class TicTacToe {
             }
         }
         System.out.println(
-                turn + "'s turn; enter a slot number to place "
-                        + turn + " in:");
+                turns + "'s turn; enter a slot number to place " + turns + " in:");
         return null;
     }
 
     public void printBoard() {
-        System.out.println("| " + board[0] + " | " + board[1] + " | " + board[2] + " |");
+        System.out.println("| " + playBoard[0] + " | " + playBoard[1] + " | " + playBoard[2] + " |");
         System.out.println();
-        System.out.println("| " + board[3] + " | " + board[4] + " | " + board[5] + " |");
+        System.out.println("| " + playBoard[3] + " | " + playBoard[4] + " | " + playBoard[5] + " |");
         System.out.println();
-        System.out.println("| " + board[6] + " | " + board[7] + " | " + board[8] + " |");
+        System.out.println("| " + playBoard[6] + " | " + playBoard[7] + " | " + playBoard[8] + " |");
         System.out.println();
     }
 
     public static void main(String[] args) {
         Scanner sc = getScanner();
 
-        board = new String[9];
-        turn = "X";
+        playBoard = new String[9];
+        turns = "X";
         String winner = null;
 
         for (int a = 0; a < 9; a++) {
-            board[a] = String.valueOf(a + 1);
+            playBoard[a] = String.valueOf(a + 1);
         }
 
         TicTacToe game = new TicTacToe();
@@ -87,14 +85,14 @@ public class TicTacToe {
                 System.out.println("Invalid Input! Try again");
                 continue;
             }
-            if (board[input - 1].equals(
+            if (playBoard[input - 1].equals(
                     String.valueOf(input))) {
-                board[input - 1] = turn;
+                playBoard[input - 1] = turns;
 
-                if (turn.equals("X")) {
-                    turn = "O";
+                if (turns.equals("X")) {
+                    turns = "O";
                 } else {
-                    turn = "X";
+                    turns = "X";
                 }
 
                 game.printBoard();
@@ -106,18 +104,9 @@ public class TicTacToe {
             }
         }
         if (winner.equalsIgnoreCase("draw")) {
-            System.out.println(
-                    "It's a draw");
+            System.out.println("It's a draw");
+        } else {
+            System.out.println(winner + " is winner! Thanks for playing.");
         }
-
-
-        else {
-            System.out.println(
-                    winner + " is winner! Thanks for playing.");
-        }
-
-
     }
-
-
 }
