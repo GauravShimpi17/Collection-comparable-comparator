@@ -38,6 +38,7 @@ public class Student implements Serializable {
             System.out.println(e.getMessage());
         }
 
+
 //        Deserializing data
         Student deserializedStudent = null;
         try {
