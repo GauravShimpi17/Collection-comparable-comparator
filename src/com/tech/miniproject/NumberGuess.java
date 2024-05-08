@@ -11,26 +11,25 @@ public class NumberGuess {
         Random random = new Random();
 
         int minRange = 0;
-        int maxRange =100;
-        int targetValue = random.nextInt(maxRange - minRange + 1) +minRange;
+        int maxRange = 100;
+        int targetValue = random.nextInt(maxRange - minRange + 1) + minRange;
         int attempts = 1;
 
-        System.out.println("Min range is " + minRange +" and Max range is " + maxRange);
+        System.out.println("Min range is " + minRange + " and Max range is " + maxRange);
 
-
-        for(int attempt = 5; attempt >=attempts; attempt--){
+        for (int attempt = 5; attempt >= attempts; attempt--) {
             System.out.println(attempt + " attempts left.");
             System.out.println("Enter a number : ");
             int guess = sc.nextInt();
 
-            if (!(guess >minRange && guess<maxRange)){
+            if (!(guess > minRange && guess < maxRange)) {
                 System.out.println("Invalid Number! Try again ...");
-            }else if (guess == targetValue){
+            } else if (guess == targetValue) {
                 System.out.println("Number is correct.");
                 return;
-            } else if (guess<targetValue) {
+            } else if (guess < targetValue) {
                 System.out.println("Too Low, Try again ");
-            }else {
+            } else {
                 System.out.println("Too high! Try again.");
             }
 
