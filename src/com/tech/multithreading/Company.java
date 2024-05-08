@@ -12,6 +12,7 @@ public class Company {
         System.out.println("Item produced : " + n);
         f=true;
         notify();
+        Thread.sleep(500);
     }
 
     synchronized public int consumeItem() throws InterruptedException {
