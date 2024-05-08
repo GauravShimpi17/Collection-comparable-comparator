@@ -29,8 +29,8 @@ public class Student implements Serializable {
 
         try{
 //            Serializing the data
-            FileOutputStream fout = new FileOutputStream("student.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fout);
+            FileOutputStream fOut = new FileOutputStream("student.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fOut);
             out.writeObject(s1);
             out.close();
             System.out.println("Serialized data is saved in student.txt");
