@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class NumberGuess {
 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
@@ -21,6 +22,8 @@ public class NumberGuess {
             System.out.println(attempt + " attempts left.");
             System.out.println("Enter a number : ");
             int guess = sc.nextInt();
+
+
 
             if (!(guess >minRange && guess<maxRange)){
                 System.out.println("Invalid Number! Try again ...");
