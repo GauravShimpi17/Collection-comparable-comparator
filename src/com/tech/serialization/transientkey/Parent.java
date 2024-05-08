@@ -1,4 +1,4 @@
-package com.tech.transientkey;
+package com.tech.serialization.transientkey;
 
 
 import java.io.Serializable;

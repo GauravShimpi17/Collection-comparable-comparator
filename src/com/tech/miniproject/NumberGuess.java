@@ -23,8 +23,6 @@ public class NumberGuess {
             System.out.println("Enter a number : ");
             int guess = sc.nextInt();
 
-
-
             if (!(guess >minRange && guess<maxRange)){
                 System.out.println("Invalid Number! Try again ...");
             }else if (guess == targetValue){
