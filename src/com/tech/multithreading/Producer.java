@@ -9,15 +9,17 @@ public class Producer extends Thread {
 
     @Override
     public void run() {
-        int i = 1;
-        while (i<20) {
+//        int i = 1;
+        for (int i=1;i<10;++i) {
             try {
             this.c.produceItem(i);
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            i++;
+
+
+
         }
     }
 }

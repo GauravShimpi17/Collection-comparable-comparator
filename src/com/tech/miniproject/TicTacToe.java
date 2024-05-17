@@ -81,6 +81,9 @@ public class TicTacToe {
                 }
             } catch (Exception e) {
                 System.out.println("Invalid Input! Try again");
+                System.out.println("Please try again");
+                game.printBoard();
+                sc.next();
                 continue;
             }
             if (playBoard[input - 1].equals(String.valueOf(input))) {

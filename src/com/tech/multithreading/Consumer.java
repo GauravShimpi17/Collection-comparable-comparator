@@ -4,7 +4,7 @@ package com.tech.multithreading;
 public class Consumer extends Thread {
 
     Company c;
-    int a = 0;
+
 
     Consumer(Company c) {
         this.c = c;
@@ -12,13 +12,15 @@ public class Consumer extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        for (int i = 1;i<10;++i) {
             try {
                 this.c.consumeItem();
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
         }
+
     }
 }
