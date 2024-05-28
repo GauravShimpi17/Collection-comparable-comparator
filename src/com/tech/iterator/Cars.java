@@ -14,7 +14,7 @@ public class Cars {
         System.out.println(cars.size());
         Iterator<String> it = cars.iterator();
 
-        List < String> list = new LinkedList<>();
+//        List < String> list = new LinkedList<>();
 
         System.out.println(it.next().toUpperCase());
         while (it.hasNext()) {
@@ -22,6 +22,4 @@ public class Cars {
         }
 
     }
-
-
 }
